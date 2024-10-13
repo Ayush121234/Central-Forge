@@ -1,3 +1,4 @@
+
 import { useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/image.png'; 
 import React, { useState } from 'react';
@@ -75,32 +76,7 @@ const LoginForm = () => {
 
                 {/* Password input with eye icon for show/hide */}
                 <div className="relative">
-                    <input
-                        placeholder="Password"
-                        className="peer h-10 w-full border-solid border-b-2 border-gray-300 text-black bg-transparent placeholder-transparent focus:outline-none focus:border-gray-500"
-                        required=""
-                        id="password"
-                        name="password"
-                        type={showPassword ? "text" : "password"} // Toggle between text and password types
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <label
-                        className="absolute left-0 -top-3.5 text-gray-900 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-400 peer-focus:text-sm"
-                        htmlFor="password"
-                    >
-                        Password
-                    </label>
-
-                    {/* Eye icon button to toggle password visibility */}
-                    <button
-                        type="button"
-                        onClick={togglePasswordVisibility}
-                        className="absolute right-2 top-[60%] transform -translate-y-1/2 text-gray-500"
-                        style={{ fontSize: '21px' }} // Increased size for the icon
-                    >
-                        {showPassword ? <FaEyeSlash /> : <FaEye />}
-                    </button>
+                 
                 </div>
 
                 <div className="flex items-center justify-between">
@@ -117,6 +93,21 @@ const LoginForm = () => {
                     Sign In
                 </button>
             </form>
+            <input
+              placeholder="Password"
+              className="peer h-10 w-full border-b-2 border-solid border-gray-300 text-black bg-transparent placeholder-transparent focus:outline-none focus:border-gray-500"
+              required=""
+              id="password"
+              name="password"
+              type={showPassword ? "text" : "password"} // Toggle between text and password types
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label
+              className="absolute left-0 -top-3.5 text-gray-900 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-400 peer-focus:text-sm"
+              htmlFor="password"
+            >
+              Password
+            </label>
             <div className="text-center text-gray-900">
                 Don't have an account?
                 <button className="text-green-500 px-2 hover:underline" onClick={toSignup}>
